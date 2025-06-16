@@ -27,6 +27,12 @@ connection.once("open", () =>{
     console.log("MongoDB connection is success!");
 })
 
+const recipeRouter= require("./routes/recipeRoute.js");
+
+//http://localhost:3030/recipe
+
+app.use("/recipe", recipeRouter);
+
 app.listen(PORT,()=>{
     console.log("Server is up and running on PORT ${PORT}")
 });
